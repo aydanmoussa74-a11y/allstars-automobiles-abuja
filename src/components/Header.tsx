@@ -27,7 +27,7 @@ export function Header({
   onOpenMobileMenu,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0A0A0A]/95 backdrop-blur-xl pt-safe px-safe">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0A0A0A] pt-safe px-safe">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 px-4 sm:h-16 sm:px-6 sm:gap-4 lg:gap-8">
         {/* Zone 1: Compact Mobile Brand Mark ("ALLSTARS") & Full Desktop Wordmark */}
         <button

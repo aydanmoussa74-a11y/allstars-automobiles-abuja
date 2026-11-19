@@ -77,9 +77,7 @@ export function InteractiveCarStage({
   compact = false,
 }: InteractiveCarStageProps) {
   const [mode, setMode] = useState<StageMode>('hotspots');
-  const [activeHotspotId, setActiveHotspotId] = useState<string | null>(
-    vehicle.hotspots[0]?.id ?? null
-  );
+  const [activeHotspotId, setActiveHotspotId] = useState<string | null>(null);
   const [angleDeg, setAngleDeg] = useState<number>(0);
   const [autoSpin, setAutoSpin] = useState<boolean>(true);
   const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -91,10 +89,10 @@ export function InteractiveCarStage({
   const dragStartRef = useRef<{ x: number; startAngle: number } | null>(null);
 
   useEffect(() => {
-    setActiveHotspotId(vehicle.hotspots[0]?.id ?? null);
+    setActiveHotspotId(null);
     setAngleDeg(0);
     setActiveChapterId(REEL_CHAPTERS[0].id);
-  }, [vehicle.id, vehicle.hotspots]);
+  }, [vehicle.id]);
 
   useEffect(() => {
     if (mode !== 'spin' || !autoSpin || motionPaused || isDragging) return;
@@ -150,22 +148,22 @@ export function InteractiveCarStage({
 
   return (
     <div className="space-y-3">
-      {/* Top Interactive Mode Switcher */}
+      {/* Top Interactive Mode Switcher (wraps cleanly on narrow mobile viewports) */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div
           role="tablist"
           aria-label="Interactive vehicle inspection mode"
-          className="glass-pill inline-flex max-w-full items-center gap-1 overflow-x-auto rounded-full p-1 no-scrollbar"
+          className="flex flex-wrap items-center gap-2"
         >
           <button
             type="button"
             role="tab"
             aria-selected={mode === 'hotspots'}
             onClick={() => setMode('hotspots')}
-            className={`inline-flex min-h-[38px] items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-[0.97] ${
+            className={`inline-flex min-h-[36px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
               mode === 'hotspots'
                 ? 'bg-white text-black font-semibold'
-                : 'text-[#D4D4D8] hover:text-white'
+                : 'glass-pill text-[#D4D4D8] hover:border-white/35 hover:text-white'
             }`}
           >
             <ScanEye className="h-3.5 w-3.5" aria-hidden="true" />
@@ -177,10 +175,10 @@ export function InteractiveCarStage({
             role="tab"
             aria-selected={mode === 'spin'}
             onClick={() => setMode('spin')}
-            className={`inline-flex min-h-[38px] items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-[0.97] ${
+            className={`inline-flex min-h-[36px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
               mode === 'spin'
                 ? 'bg-white text-black font-semibold'
-                : 'text-[#D4D4D8] hover:text-white'
+                : 'glass-pill text-[#D4D4D8] hover:border-white/35 hover:text-white'
             }`}
           >
             <RotateCw className="h-3.5 w-3.5" aria-hidden="true" />
@@ -192,10 +190,10 @@ export function InteractiveCarStage({
             role="tab"
             aria-selected={mode === 'reel'}
             onClick={() => setMode('reel')}
-            className={`inline-flex min-h-[38px] items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-[0.97] ${
+            className={`inline-flex min-h-[36px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
               mode === 'reel'
                 ? 'bg-white text-black font-semibold'
-                : 'text-[#D4D4D8] hover:text-white'
+                : 'glass-pill text-[#D4D4D8] hover:border-white/35 hover:text-white'
             }`}
           >
             <Film className="h-3.5 w-3.5" aria-hidden="true" />
@@ -207,7 +205,7 @@ export function InteractiveCarStage({
           <button
             type="button"
             onClick={onInspectDrawer}
-            className="glass-pill inline-flex min-h-[38px] items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium text-[#E4E4E7] transition-[transform,border-color,color] duration-150 hover:border-white/35 hover:text-white active:scale-[0.97]"
+            className="glass-pill inline-flex min-h-[36px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium text-[#E4E4E7] whitespace-nowrap transition-[transform,border-color,color] duration-150 hover:border-white/35 hover:text-white active:scale-[0.97]"
           >
             <span>Full Brief</span>
             <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -518,7 +516,7 @@ export function InteractiveCarStage({
 
             {/* Chapter Pills + Live Video Walkaround Request */}
             <div className="flex flex-wrap items-center justify-between gap-2.5 border-t border-white/[0.10] bg-[#121214] p-3">
-              <div className="no-scrollbar flex max-w-full items-center gap-1.5 overflow-x-auto">
+              <div className="flex flex-wrap items-center gap-2">
                 {REEL_CHAPTERS.map((chapter) => {
                   const isCurrent = activeChapterId === chapter.id;
                   return (
@@ -526,7 +524,7 @@ export function InteractiveCarStage({
                       key={chapter.id}
                       type="button"
                       onClick={() => setActiveChapterId(chapter.id)}
-                      className={`min-h-[36px] rounded-full px-3 py-1 text-xs whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-95 ${
+                      className={`min-h-[36px] rounded-full px-3 py-1.5 text-xs whitespace-nowrap transition-[transform,background-color,color] duration-150 active:scale-95 ${
                         isCurrent
                           ? 'bg-white text-black font-semibold'
                           : 'border border-white/15 text-[#D4D4D8] hover:text-white'

@@ -43,8 +43,8 @@ export function ShowroomAndFaqSection() {
   const [mapProvider, setMapProvider] = useState<'google' | 'street'>('google');
 
   return (
-    <section id="showroom" className="py-10 sm:py-24 lg:py-28 px-safe">
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+    <section id="showroom" className="scroll-mt-20 pt-10 pb-12 sm:py-24 lg:py-28 px-safe">
+      <div className="mx-auto max-w-6xl px-5 pt-4 sm:px-6 sm:pt-0">
         {/* Page Header */}
         <div className="flex flex-col gap-5 border-b border-white/[0.10] pb-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">

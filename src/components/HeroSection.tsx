@@ -50,11 +50,11 @@ export function HeroSection({
   const highlightReviews = SAMPLE_REVIEWS.slice(0, 2);
 
   return (
-    <div id="top" className="px-safe">
+    <div id="top" className="scroll-mt-20 pt-4 px-safe sm:pt-0">
       {/* HERO WITH ANIMATED CAR SCENE */}
       <section
         ref={heroContainerRef}
-        className="relative overflow-hidden pt-7 pb-14 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32"
+        className="relative overflow-hidden pb-12 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28"
       >
         {/* Moody Dark Automotive Background Visual with Scroll Parallax & Motion Toggle */}
         <motion.div
@@ -78,72 +78,67 @@ export function HeroSection({
         </motion.div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6">
-          {/* Apple-Grade Display Typography: Left-aligned on mobile, centered on larger viewports */}
-          <div className="mx-auto max-w-3xl text-left sm:text-center">
+          {/* Apple-Grade Display Typography: Compact above-the-fold spacing on mobile */}
+          <div className="mx-auto max-w-3xl pt-4 pb-5 text-left sm:pt-4 sm:pb-8 sm:text-center">
             <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-[#E4E4E7] sm:justify-center sm:text-sm">
               <MapPin className="h-3.5 w-3.5 shrink-0 text-[#D4D4D8]" aria-hidden="true" />
               <span>Abuja Lot · {SHOWROOM_ADDRESS}</span>
             </p>
 
             <h1
-              className="mt-3.5 font-display font-bold tracking-[-0.03em] text-white sm:mt-6"
-              style={{
-                fontSize: 'clamp(2.05rem, 5.5vw, 4.4rem)',
-                lineHeight: 1.07,
-                textWrap: 'balance',
-              }}
+              className="mt-2.5 font-display text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:mt-5 sm:text-5xl lg:text-[4.15rem] lg:leading-[1.06]"
+              style={{ textWrap: 'balance' }}
             >
               Buy verified luxury cars in Abuja without guesswork.
             </h1>
 
-            <p className="mt-3.5 max-w-2xl text-base leading-relaxed text-[#E4E4E7] sm:mx-auto sm:mt-5 sm:text-lg">
-              Inspect clean-title tokunbo SUVs and executive sedans in person on Ahmadu Bello Way
-              and close directly with our WhatsApp desk.
+            <p className="mt-2.5 max-w-2xl text-sm leading-relaxed text-[#E4E4E7] sm:mx-auto sm:mt-5 sm:text-lg">
+              Inspect clean-title tokunbo SUVs and sedans on Ahmadu Bello Way and close via WhatsApp.
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9 sm:justify-center">
+            <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:mt-8 sm:justify-center sm:gap-3.5">
               <button
                 type="button"
                 onClick={() => onNavigate('inventory')}
-                className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black whitespace-nowrap shrink-0 transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:min-h-[50px] sm:px-7 sm:py-3"
+                className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-black whitespace-nowrap shrink-0 transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:min-h-[50px] sm:px-7 sm:py-3 sm:text-sm"
               >
                 <span>Explore Stock ({filteredVehicles.length})</span>
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true" />
               </button>
               <button
                 type="button"
                 onClick={() => onNavigate('trade-in')}
-                className="glass-pill inline-flex min-h-[46px] items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white whitespace-nowrap shrink-0 transition-[transform,border-color,background-color] duration-150 hover:border-white/45 hover:bg-white/[0.08] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:min-h-[50px] sm:px-7 sm:py-3"
+                className="glass-pill inline-flex min-h-[42px] items-center justify-center rounded-full px-4 py-2 text-xs font-medium text-white whitespace-nowrap shrink-0 transition-[transform,border-color,background-color] duration-150 hover:border-white/45 hover:bg-white/[0.08] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:min-h-[50px] sm:px-7 sm:py-3 sm:text-sm"
               >
                 Value My Car
               </button>
             </div>
           </div>
 
-          {/* Animated Automotive Showcase Stage + Floating Pill Dock */}
+          {/* Animated Automotive Showcase Stage + Wrapped Pill Dock */}
           <motion.div
             initial={motionPaused ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             style={motionPaused ? undefined : { y: stageLiftY }}
             transition={{ duration: motionPaused ? 0 : 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-obsidian mx-auto mt-8 max-w-5xl rounded-2xl p-4 sm:mt-14 sm:p-7"
+            className="glass-obsidian mx-auto mt-1 max-w-5xl rounded-2xl p-3.5 sm:mt-8 sm:p-7"
           >
             {/* Showcase Control Header */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.10] pb-4">
-              <div className="flex flex-wrap items-center gap-2.5 text-xs">
-                <span className="inline-flex items-center gap-1.5 font-medium text-white">
+            <div className="flex items-center justify-between gap-2 border-b border-white/[0.10] pb-3 sm:pb-4">
+              <div className="flex min-w-0 items-center gap-2 text-xs">
+                <span className="inline-flex shrink-0 items-center gap-1.5 font-medium text-white">
                   <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
-                  <span>{isTradeInView ? 'Trade-In & Swap Desk' : 'Live Lot Showcase'}</span>
+                  <span>{isTradeInView ? 'Swap Desk' : 'Live Lot'}</span>
                 </span>
                 <span className="text-[#A1A1AA]" aria-hidden="true">
-                  /
+                  ·
                 </span>
-                <span className="text-[#D4D4D8] tabular-nums">
+                <span className="truncate text-[#D4D4D8] tabular-nums">
                   {isTradeInView
-                    ? 'Same-day Central Area appraisal'
-                    : `${filteredVehicles.length} preview ${
+                    ? 'Abuja appraisal'
+                    : `${filteredVehicles.length} ${
                         filteredVehicles.length === 1 ? 'unit' : 'units'
-                      } in "${activeFilter}"`}
+                      }`}
                 </span>
               </div>
 
@@ -151,14 +146,14 @@ export function HeroSection({
                 type="button"
                 onClick={onToggleMotion}
                 aria-pressed={motionPaused}
-                className="inline-flex min-h-[38px] items-center gap-1.5 rounded-full border border-white/20 px-3.5 py-1.5 text-xs font-medium text-[#E4E4E7] transition-[transform,border-color,color] duration-150 hover:border-white/40 hover:text-white active:scale-[0.97]"
+                className="inline-flex min-h-[34px] shrink-0 items-center gap-1.5 rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-[#E4E4E7] transition-[transform,border-color,color] duration-150 hover:border-white/40 hover:text-white active:scale-[0.97]"
               >
                 {motionPaused ? (
                   <Play className="h-3 w-3" aria-hidden="true" />
                 ) : (
                   <Pause className="h-3 w-3" aria-hidden="true" />
                 )}
-                <span>{motionPaused ? 'Motion paused' : 'Pause motion'}</span>
+                <span>{motionPaused ? 'Paused' : 'Pause motion'}</span>
               </button>
             </div>
 
@@ -286,12 +281,12 @@ export function HeroSection({
               </div>
             )}
 
-            {/* Interactive Floating Pill Dock */}
-            <div className="mt-7 flex justify-start sm:mt-8 sm:justify-center">
+            {/* Wrapped Interactive Pill Dock (zero horizontal clipping on narrow screens) */}
+            <div className="mt-6 flex justify-start sm:mt-8 sm:justify-center">
               <div
                 role="tablist"
                 aria-label="Vehicle category and action filter"
-                className="glass-pill no-scrollbar flex max-w-full items-center gap-1.5 overflow-x-auto rounded-full p-1.5"
+                className="flex flex-wrap items-center justify-start gap-2 sm:justify-center"
               >
                 {DOCK_FILTERS.map((filter) => {
                   const isActive = activeFilter === filter;
@@ -302,10 +297,10 @@ export function HeroSection({
                       role="tab"
                       aria-selected={isActive}
                       onClick={() => onSelectFilter(filter)}
-                      className={`min-h-[42px] rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                      className={`min-h-[36px] rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:min-h-[40px] sm:px-4 sm:py-2 ${
                         isActive
                           ? 'bg-white text-black font-semibold'
-                          : 'text-[#D4D4D8] hover:text-white'
+                          : 'glass-pill text-[#D4D4D8] hover:border-white/35 hover:text-white'
                       }`}
                     >
                       {filter}

@@ -15,8 +15,8 @@ export function LegalPage({ mode, onNavigate }: LegalPageProps) {
   const isTerms = mode === 'terms';
 
   return (
-    <section className="py-10 sm:py-24 lg:py-28 px-safe">
-      <div className="mx-auto max-w-4xl px-5 sm:px-6">
+    <section className="scroll-mt-20 pt-10 pb-12 sm:py-24 lg:py-28 px-safe">
+      <div className="mx-auto max-w-4xl px-5 pt-4 sm:px-6 sm:pt-0">
         <button
           type="button"
           onClick={() => onNavigate('home')}

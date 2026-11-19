@@ -77,9 +77,9 @@ export function InventoryBriefSection({
   return (
     <section
       id="inventory"
-      className="py-10 sm:py-24 lg:py-28 px-safe"
+      className="scroll-mt-20 pt-10 pb-12 sm:py-24 lg:py-28 px-safe"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+      <div className="mx-auto max-w-6xl px-5 pt-4 sm:px-6 sm:pt-0">
         {/* Page Header + Search */}
         <div className="flex flex-col gap-6 border-b border-white/[0.10] pb-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
@@ -132,7 +132,7 @@ export function InventoryBriefSection({
         {/* Filter Chips + Compare Jump + Count */}
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <div
-            className="no-scrollbar flex max-w-full items-center gap-2 overflow-x-auto pb-1"
+            className="flex flex-wrap items-center gap-2"
             role="group"
             aria-label="Filter vehicle catalog"
           >
@@ -145,7 +145,7 @@ export function InventoryBriefSection({
                   key={filter}
                   type="button"
                   onClick={() => onSelectFilter(filter)}
-                  className={`min-h-[42px] rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                  className={`min-h-[36px] rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:min-h-[40px] sm:px-4 sm:py-2 ${
                     isActive
                       ? 'bg-white text-black font-semibold'
                       : 'border border-white/20 bg-[#161616] text-[#D4D4D8] hover:border-white/40 hover:text-white'

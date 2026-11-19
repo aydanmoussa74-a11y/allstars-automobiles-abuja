@@ -9,8 +9,8 @@ interface ReviewsPageProps {
 
 export function ReviewsPage({ onNavigate }: ReviewsPageProps) {
   return (
-    <section className="py-10 sm:py-24 lg:py-28 px-safe">
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+    <section className="scroll-mt-20 pt-10 pb-12 sm:py-24 lg:py-28 px-safe">
+      <div className="mx-auto max-w-6xl px-5 pt-4 sm:px-6 sm:pt-0">
         {/* Header */}
         <div className="max-w-3xl">
           <p className="text-xs font-medium text-[#A1A1AA]">

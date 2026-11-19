@@ -90,9 +90,9 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
   return (
     <section
       id="trade-in"
-      className="py-10 sm:py-24 lg:py-28 px-safe"
+      className="scroll-mt-20 pt-10 pb-12 sm:py-24 lg:py-28 px-safe"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+      <div className="mx-auto max-w-6xl px-5 pt-4 sm:px-6 sm:pt-0">
         <div className="glass-obsidian rounded-2xl p-5 sm:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
             {/* Left Copy & Quick Target Chips */}
