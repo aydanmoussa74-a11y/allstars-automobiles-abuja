@@ -72,14 +72,14 @@ export function MobileSidebar({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex justify-end bg-black/80 backdrop-blur-sm md:hidden"
+      className="fixed inset-0 z-[60] flex justify-end bg-black/80 backdrop-blur-sm md:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Showroom tools and quick filters"
       onClick={onClose}
     >
       <aside
-        className="glass-obsidian flex h-full w-[86%] max-w-sm flex-col justify-between overflow-y-auto border-y-0 border-r-0 p-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))] pr-[max(1.5rem,env(safe-area-inset-right))]"
+        className="flex h-full w-[86%] max-w-sm flex-col justify-between overflow-y-auto border-l border-white/15 bg-[#111113] p-5 pt-[max(1.25rem,env(safe-area-inset-top))] pb-24 pr-[max(1.25rem,env(safe-area-inset-right))] sm:p-6 sm:pb-24"
         onClick={(e) => e.stopPropagation()}
       >
         <div>

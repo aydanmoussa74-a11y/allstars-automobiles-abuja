@@ -20,8 +20,8 @@ export function Footer({
   onToggleMotion,
 }: FooterProps) {
   return (
-    <footer className="border-t border-white/[0.10] bg-[#0A0A0A] pt-14 pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:pb-14 px-safe sm:pt-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <footer className="border-t border-white/[0.10] bg-[#0A0A0A] pt-12 pb-[calc(6.5rem+env(safe-area-inset-bottom))] md:pb-14 px-safe sm:pt-16">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <div className="grid gap-10 md:grid-cols-12 md:items-start">
           {/* Brand & Address */}
           <div className="md:col-span-5">

@@ -43,8 +43,8 @@ export function ShowroomAndFaqSection() {
   const [mapProvider, setMapProvider] = useState<'google' | 'street'>('google');
 
   return (
-    <section id="showroom" className="py-16 sm:py-24 lg:py-28 px-safe">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="showroom" className="py-10 sm:py-24 lg:py-28 px-safe">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Page Header */}
         <div className="flex flex-col gap-5 border-b border-white/[0.10] pb-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
@@ -52,7 +52,7 @@ export function ShowroomAndFaqSection() {
               Abuja Showroom &amp; Directions
             </p>
             <h1
-              className="mt-3 font-display text-4xl font-bold tracking-[-0.03em] text-white sm:text-5xl"
+              className="mt-3 font-display text-3xl font-bold tracking-[-0.03em] text-white sm:text-5xl"
               style={{ lineHeight: 1.06, textWrap: 'balance' }}
             >
               Visit Ahmadu Bello Way, Central Area, Abuja.

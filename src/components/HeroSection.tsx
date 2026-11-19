@@ -54,7 +54,7 @@ export function HeroSection({
       {/* HERO WITH ANIMATED CAR SCENE */}
       <section
         ref={heroContainerRef}
-        className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32"
+        className="relative overflow-hidden pt-7 pb-14 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32"
       >
         {/* Moody Dark Automotive Background Visual with Scroll Parallax & Motion Toggle */}
         <motion.div
@@ -77,45 +77,43 @@ export function HeroSection({
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#0A0A0A_92%)]" />
         </motion.div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
-          {/* Apple-Grade Display Typography & Breathing Room */}
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-xs font-medium text-[#E4E4E7] sm:text-sm">
-              <MapPin className="h-3.5 w-3.5 text-[#D4D4D8]" aria-hidden="true" />
-              <span>Allstars Automobiles Worldwide</span>
-              <span aria-hidden="true">·</span>
-              <span>{SHOWROOM_ADDRESS}</span>
+        <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6">
+          {/* Apple-Grade Display Typography: Left-aligned on mobile, centered on larger viewports */}
+          <div className="mx-auto max-w-3xl text-left sm:text-center">
+            <p className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-[#E4E4E7] sm:justify-center sm:text-sm">
+              <MapPin className="h-3.5 w-3.5 shrink-0 text-[#D4D4D8]" aria-hidden="true" />
+              <span>Abuja Lot · {SHOWROOM_ADDRESS}</span>
             </p>
 
             <h1
-              className="mt-6 font-display font-bold tracking-[-0.03em] text-white"
+              className="mt-3.5 font-display font-bold tracking-[-0.03em] text-white sm:mt-6"
               style={{
-                fontSize: 'clamp(2.35rem, 5.5vw, 4.4rem)',
-                lineHeight: 1.05,
+                fontSize: 'clamp(2.05rem, 5.5vw, 4.4rem)',
+                lineHeight: 1.07,
                 textWrap: 'balance',
               }}
             >
               Buy verified luxury cars in Abuja without guesswork.
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#E4E4E7] sm:text-lg">
-              Inspect clean-title tokunbo SUVs and executive sedans in person on Ahmadu Bello Way,
-              verify full customs duty papers, and close directly with our WhatsApp desk.
+            <p className="mt-3.5 max-w-2xl text-base leading-relaxed text-[#E4E4E7] sm:mx-auto sm:mt-5 sm:text-lg">
+              Inspect clean-title tokunbo SUVs and executive sedans in person on Ahmadu Bello Way
+              and close directly with our WhatsApp desk.
             </p>
 
-            <div className="mt-10 flex flex-col items-stretch justify-center gap-3.5 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9 sm:justify-center">
               <button
                 type="button"
                 onClick={() => onNavigate('inventory')}
-                className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-black whitespace-nowrap shrink-0 transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black whitespace-nowrap shrink-0 transition-[transform,opacity] duration-150 hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:min-h-[50px] sm:px-7 sm:py-3"
               >
-                <span>Explore Inventory ({filteredVehicles.length})</span>
+                <span>Explore Stock ({filteredVehicles.length})</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </button>
               <button
                 type="button"
                 onClick={() => onNavigate('trade-in')}
-                className="glass-pill inline-flex min-h-[50px] items-center justify-center rounded-full px-7 py-3 text-sm font-medium text-white whitespace-nowrap shrink-0 transition-[transform,border-color,background-color] duration-150 hover:border-white/45 hover:bg-white/[0.08] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="glass-pill inline-flex min-h-[46px] items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white whitespace-nowrap shrink-0 transition-[transform,border-color,background-color] duration-150 hover:border-white/45 hover:bg-white/[0.08] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:min-h-[50px] sm:px-7 sm:py-3"
               >
                 Value My Car
               </button>
@@ -128,7 +126,7 @@ export function HeroSection({
             animate={{ opacity: 1, y: 0 }}
             style={motionPaused ? undefined : { y: stageLiftY }}
             transition={{ duration: motionPaused ? 0 : 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="glass-obsidian mx-auto mt-14 max-w-5xl rounded-2xl p-5 sm:p-7"
+            className="glass-obsidian mx-auto mt-8 max-w-5xl rounded-2xl p-4 sm:mt-14 sm:p-7"
           >
             {/* Showcase Control Header */}
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.10] pb-4">
@@ -289,7 +287,7 @@ export function HeroSection({
             )}
 
             {/* Interactive Floating Pill Dock */}
-            <div className="mt-8 flex justify-center">
+            <div className="mt-7 flex justify-start sm:mt-8 sm:justify-center">
               <div
                 role="tablist"
                 aria-label="Vehicle category and action filter"
@@ -304,7 +302,7 @@ export function HeroSection({
                       role="tab"
                       aria-selected={isActive}
                       onClick={() => onSelectFilter(filter)}
-                      className={`min-h-[42px] rounded-full px-4 py-2 text-xs font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 sm:text-[13px] ${
+                      className={`min-h-[42px] rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                         isActive
                           ? 'bg-white text-black font-semibold'
                           : 'text-[#D4D4D8] hover:text-white'
@@ -321,8 +319,8 @@ export function HeroSection({
       </section>
 
       {/* CURATED FEATURED LOT PICKS */}
-      <section className="border-t border-white/[0.08] py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="border-t border-white/[0.08] py-12 sm:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-medium text-[#A1A1AA]">Selected Abuja Preview Units</p>
@@ -340,7 +338,7 @@ export function HeroSection({
             </button>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
             {featuredPicks.map((car) => (
               <article
                 key={car.id}
@@ -389,8 +387,8 @@ export function HeroSection({
       </section>
 
       {/* TRUST METRICS + BUYER REVIEWS PREVIEW */}
-      <section className="border-t border-white/[0.08] py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section className="border-t border-white/[0.08] py-12 sm:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6">
           <div className="grid gap-5 sm:grid-cols-3">
             {TRUST_STATS.map((stat) => (
               <div

@@ -9,20 +9,20 @@ interface ReviewsPageProps {
 
 export function ReviewsPage({ onNavigate }: ReviewsPageProps) {
   return (
-    <section className="py-16 sm:py-24 lg:py-28 px-safe">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section className="py-10 sm:py-24 lg:py-28 px-safe">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Header */}
         <div className="max-w-3xl">
           <p className="text-xs font-medium text-[#A1A1AA]">
             Abuja Buyer Reviews · Preview Testimonials
           </p>
           <h1
-            className="mt-4 font-display text-4xl font-bold tracking-[-0.03em] text-white sm:text-5xl"
+            className="mt-3 font-display text-3xl font-bold tracking-[-0.03em] text-white sm:mt-4 sm:text-5xl"
             style={{ lineHeight: 1.06, textWrap: 'balance' }}
           >
             Built on transparent inspections and clean customs handovers.
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-[#D4D4D8] sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[#D4D4D8] sm:mt-5 sm:text-lg">
             Read how private buyers and fleet leads across Abuja, Lagos, and Port Harcourt inspect,
             swap, and take delivery from Ahmadu Bello Way.
           </p>

@@ -90,11 +90,11 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
   return (
     <section
       id="trade-in"
-      className="py-16 sm:py-24 lg:py-28 px-safe"
+      className="py-10 sm:py-24 lg:py-28 px-safe"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="glass-obsidian rounded-2xl p-6 sm:p-8 lg:p-10">
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
+        <div className="glass-obsidian rounded-2xl p-5 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
             {/* Left Copy & Quick Target Chips */}
             <div className="lg:col-span-5">
               <p className="text-xs font-medium text-[#A1A1AA]">
@@ -146,7 +146,7 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
                         key={car.id}
                         type="button"
                         onClick={() => setTargetCar(label)}
-                        className={`min-h-[42px] rounded-full px-3.5 py-2 text-xs transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                        className={`min-h-[42px] rounded-full px-4 py-2 text-sm transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                           selected
                             ? 'bg-white text-black font-semibold'
                             : 'border border-white/20 text-[#D4D4D8] hover:border-white/40 hover:text-white'
@@ -184,7 +184,7 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
                         setCurrentCar(e.target.value);
                         if (errorMessage) setErrorMessage('');
                       }}
-                      placeholder="e.g. 2018 Toyota Highlander XLE (Nigerian used)"
+                      placeholder="e.g. 2018 Highlander"
                       className="mt-2 min-h-[48px] w-full rounded-xl border border-white/20 bg-[#111111] px-4 py-3 text-base text-white placeholder:text-[#A1A1AA] focus:border-white/55 focus:outline-none sm:text-sm"
                     />
                   </div>
@@ -208,7 +208,7 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
                             role="radio"
                             aria-checked={active}
                             onClick={() => setConditionGrade(grade)}
-                            className={`min-h-[42px] rounded-full px-3.5 py-2 text-xs transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
+                            className={`min-h-[42px] rounded-full px-4 py-2 text-sm transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
                               active
                                 ? 'bg-white text-black font-semibold'
                                 : 'border border-white/20 bg-[#111111] text-[#D4D4D8] hover:border-white/40 hover:text-white'
@@ -237,7 +237,7 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
                         setTargetCar(e.target.value);
                         if (errorMessage) setErrorMessage('');
                       }}
-                      placeholder="e.g. 2022 Lexus RX 350 F-Sport or direct cash sale"
+                      placeholder="e.g. 2022 Lexus RX 350"
                       className="mt-2 min-h-[48px] w-full rounded-xl border border-white/20 bg-[#111111] px-4 py-3 text-base text-white placeholder:text-[#A1A1AA] focus:border-white/55 focus:outline-none sm:text-sm"
                     />
                   </div>
@@ -261,7 +261,7 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
                             role="radio"
                             aria-checked={active}
                             onClick={() => setInspectionSlot(slot)}
-                            className={`min-h-[42px] rounded-full px-3.5 py-2 text-xs tabular-nums transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
+                            className={`min-h-[42px] rounded-full px-4 py-2 text-sm tabular-nums transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] ${
                               active
                                 ? 'bg-white text-black font-semibold'
                                 : 'border border-white/20 bg-[#111111] text-[#D4D4D8] hover:border-white/40 hover:text-white'
@@ -287,7 +287,7 @@ export function TradeInSection({ presetTargetCar }: TradeInSectionProps) {
                       rows={3}
                       value={conditionNotes}
                       onChange={(e) => setConditionNotes(e.target.value)}
-                      placeholder="Current mileage, AC & transmission condition, paint history, customs papers status..."
+                      placeholder="Mileage, AC, paint & customs papers..."
                       className="mt-2 w-full rounded-xl border border-white/20 bg-[#111111] px-4 py-3 text-base text-white placeholder:text-[#A1A1AA] focus:border-white/55 focus:outline-none sm:text-sm"
                     />
                   </div>

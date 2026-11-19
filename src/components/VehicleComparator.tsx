@@ -135,7 +135,7 @@ export function VehicleComparator({
             >
               {vehicles.map((item) => (
                 <option key={item.id} value={item.id}>
-                  {item.year} {item.make} {item.model} ({item.priceNaira})
+                  {item.year} {item.make} {item.model}
                 </option>
               ))}
             </select>

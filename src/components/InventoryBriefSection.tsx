@@ -77,9 +77,9 @@ export function InventoryBriefSection({
   return (
     <section
       id="inventory"
-      className="py-16 sm:py-24 lg:py-28 px-safe"
+      className="py-10 sm:py-24 lg:py-28 px-safe"
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         {/* Page Header + Search */}
         <div className="flex flex-col gap-6 border-b border-white/[0.10] pb-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
@@ -87,7 +87,7 @@ export function InventoryBriefSection({
               Abuja Lot Catalog · Preview Inventory
             </p>
             <h1
-              className="mt-3 font-display text-4xl font-bold tracking-[-0.03em] text-white sm:text-5xl"
+              className="mt-3 font-display text-3xl font-bold tracking-[-0.03em] text-white sm:text-5xl"
               style={{ lineHeight: 1.06, textWrap: 'balance' }}
             >
               Browse verified Abuja stock and inspect any brief.
@@ -112,7 +112,7 @@ export function InventoryBriefSection({
                 type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search Lexus, GLE, Prado, 2022..."
+                placeholder="Search Lexus, GLE, Prado..."
                 className="min-h-[48px] w-full rounded-full border border-white/20 bg-[#161616] pl-11 pr-10 text-base text-white placeholder:text-[#A1A1AA] focus:border-white/50 focus:outline-none sm:text-sm"
               />
               {searchQuery && (
@@ -130,7 +130,7 @@ export function InventoryBriefSection({
         </div>
 
         {/* Filter Chips + Compare Jump + Count */}
-        <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <div
             className="no-scrollbar flex max-w-full items-center gap-2 overflow-x-auto pb-1"
             role="group"
@@ -145,7 +145,7 @@ export function InventoryBriefSection({
                   key={filter}
                   type="button"
                   onClick={() => onSelectFilter(filter)}
-                  className={`min-h-[44px] rounded-full px-4 py-2 text-xs font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+                  className={`min-h-[42px] rounded-full px-4 py-2 text-sm font-medium whitespace-nowrap shrink-0 transition-[transform,background-color,border-color,color] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                     isActive
                       ? 'bg-white text-black font-semibold'
                       : 'border border-white/20 bg-[#161616] text-[#D4D4D8] hover:border-white/40 hover:text-white'

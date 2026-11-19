@@ -25,9 +25,9 @@ export function MobileBottomNav({
   return (
     <nav
       aria-label="Mobile app navigation"
-      className="glass-obsidian fixed inset-x-0 bottom-0 z-40 border-x-0 border-b-0 pt-1.5 pb-[max(0.45rem,env(safe-area-inset-bottom))] px-safe md:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 w-full border-t border-white/15 bg-[#0E0E10]/95 backdrop-blur-xl pt-1.5 pb-[calc(env(safe-area-inset-bottom)+12px)] px-safe md:hidden"
     >
-      <div className="mx-auto grid max-w-md grid-cols-5 items-center gap-1 px-2">
+      <div className="grid w-full grid-cols-5 items-center gap-1 px-2">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const active = currentPage === tab.id;
@@ -37,14 +37,14 @@ export function MobileBottomNav({
               type="button"
               onClick={() => onNavigate(tab.id)}
               aria-current={active ? 'page' : undefined}
-              className={`flex min-h-[48px] flex-col items-center justify-center gap-1 rounded-xl px-1 py-1.5 text-xs font-medium transition-[transform,background-color,color] duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
+              className={`flex min-h-[48px] w-full min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 py-1.5 text-xs font-medium transition-[transform,background-color,color] duration-150 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 ${
                 active
                   ? 'bg-white text-black font-semibold'
                   : 'text-[#D4D4D8] hover:text-white'
               }`}
             >
               <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
-              <span className="leading-none">{tab.label}</span>
+              <span className="truncate leading-none">{tab.label}</span>
             </button>
           );
         })}
