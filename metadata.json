@@ -1,0 +1,8 @@
+{
+  "name": "Allstars Automobiles Worldwide",
+  "description": "Verified luxury SUVs, executive sedans, and direct tokunbo vehicles in Abuja. Ahmadu Bello Way showroom inspection and direct WhatsApp deal desk.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
